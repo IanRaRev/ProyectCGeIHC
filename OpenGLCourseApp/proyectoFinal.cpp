@@ -45,36 +45,33 @@ std::vector<Mesh*> meshList;
 std::vector<Shader> shaderList;
 Camera camera;
 
+/* Texturas */
 Texture brickTexture;
 Texture dirtTexture;
 Texture plainTexture;
 Texture dadoTexture;
 Texture pisoTexture;
 Texture Tagave;
-//materiales
+Texture water;
+
+/* Materiales */
 Material Material_brillante;
 Material Material_opaco;
-//luz direccional
+
+/* Luz direccíonal */
 DirectionalLight mainLight;
+
 //para declarar varias luces de tipo pointlight
 PointLight pointLights[MAX_POINT_LIGHTS];
 SpotLight spotLights[MAX_SPOT_LIGHTS];
 
+/* Modelos  */
 Model Kitt_M;
 Model Llanta_M;
 Model Camino_M;
 Model Blackhawk_M;
 
-//PROYECTO FINAL
-//VARS PROYECTO FINAL
-float tazasVarEstructuraGiro = 0.0f;
-float tazasVarTazaGiroPos = 0.0f;
-float tazasVarTazaGiroNeg = 0.0f;
-
-float sillasVarGiroPos = 0.0f;
-
-//MODELOS PROYECTO FINAL
-//Juego de las tazas:
+/* Modelos juegos de tazas*/
 Model Tazas_TazaRoja;
 Model Tazas_TazaRosa;
 Model Tazas_TazaDorada;
@@ -85,20 +82,33 @@ Model Tazas_TazaMorada;
 Model Tazas_Estructura;
 Model Tazas_BaseGiratoria;
 
-//Juego de las sillas:
+/* Modelos juegos de las sillas */
 Model Sillas_BaseMetalica;
 Model Sillas_EstructuraGiro;
 
+/* SKYBOX */
 Skybox skybox;
+
+//PROYECTO FINAL
+//VARS PROYECTO FINAL
+float tazasVarEstructuraGiro = 0.0f;
+float tazasVarTazaGiroPos = 0.0f;
+float tazasVarTazaGiroNeg = 0.0f;
+
+float sillasVarGiroPos = 0.0f;
+
 
 GLfloat deltaTime = 0.0f;
 GLfloat lastTime = 0.0f;
 
+/* SHADERS */
+
 // Vertex Shader
 static const char* vShader = "shaders/shader_light.vert";
-
 // Fragment Shader
 static const char* fShader = "shaders/shader_light.frag";
+
+
 //cálculo del promedio de las normales para sombreado de Phong
 void calcAverageNormals(unsigned int * indices, unsigned int indiceCount, GLfloat * vertices, unsigned int verticeCount, 
 						unsigned int vLength, unsigned int normalOffset)
@@ -488,7 +498,7 @@ int main()
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(30.0f, 1.0f,30.0f));
+		model = glm::scale(model, glm::vec3(30.0f, 1.0f, 30.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		//pisoTexture.UseTexture();
 		plainTexture.UseTexture();
@@ -537,7 +547,7 @@ int main()
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		meshList[3]->RenderMesh();*/
 
-		//JUEGO DE LAS TAZAS
+		/**  J U E G O   D E   L A S   T A Z A S  **/
 		//Matriz temporal:
 		glm::mat4 modelTempTazas(1.0);
 		//ESTRUCTURA:
@@ -566,7 +576,7 @@ int main()
 			tazasVarEstructuraGiro = 0.0f;
 		}
 
-		//TAZA ROJA:
+		/* Tasa roja */
 		//model = glm::mat4(1.0);
 		model = glm::translate(modelTempTazas, glm::vec3(0.35f, 0.08f, 0.4f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -575,13 +585,13 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tazas_TazaRoja.RenderModel();
-		// Giro taza positivo:
-		tazasVarTazaGiroNeg -= 90.0f * deltaTime;
-		if (tazasVarTazaGiroNeg == -360.0f) {
-			tazasVarTazaGiroNeg = 0.0f;
-		}
 
-		//TAZA ROSA:
+		/* Giro positivo de la taza*/
+		tazasVarTazaGiroNeg -= 90.0f * deltaTime;
+		if (tazasVarTazaGiroNeg == -360.0f) 
+			tazasVarTazaGiroNeg = 0.0f;
+
+		/* Taza rosa */
 		//model = glm::mat4(1.0);
 		model = glm::translate(modelTempTazas, glm::vec3(2.2f, 0.08f, 2.83f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -591,7 +601,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tazas_TazaRosa.RenderModel();
 
-		//TAZA DORADA:
+		/* Taza dorada */
 		//model = glm::mat4(1.0);
 		model = glm::translate(modelTempTazas, glm::vec3(-2.0f, 0.08f, 2.83f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -601,7 +611,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tazas_TazaDorada.RenderModel();
 
-		//TAZA VERDE:
+		/* Tasa verde */
 		//model = glm::mat4(1.0);
 		model = glm::translate(modelTempTazas, glm::vec3(-3.15f, 0.08f, -0.78f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -611,7 +621,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tazas_TazaVerde.RenderModel();
 
-		//TAZA AZUL:
+		/* Tasa azul */
 		//model = glm::mat4(1.0);
 		model = glm::translate(modelTempTazas, glm::vec3(+3.5f, 0.08f, 0.2f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -621,7 +631,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tazas_TazaAzul.RenderModel();
 
-		//TAZA MORADA:
+		/* Taza morada */
 		//model = glm::mat4(1.0);
 		model = glm::translate(modelTempTazas, glm::vec3(2.15f, 0.08f, -2.23f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -631,7 +641,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tazas_TazaMorada.RenderModel();
 
-		//TAZA GRIS:
+		/* Tasa gris */
 		//model = glm::mat4(1.0);
 		model = glm::translate(modelTempTazas, glm::vec3(-0.8f, 0.08f, -2.9f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -641,7 +651,9 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tazas_TazaAzulGris.RenderModel();
 
-		//JUEGO DE LAS SILLAS
+
+
+		/**  J U E G O   D E   L A S   S I L L A S   **/
 		glm::mat4 modelTempSillas(1.0);
 		//BASE GIRATORIA:
 		model = glm::mat4(1.0);
@@ -656,7 +668,7 @@ int main()
 
 		//ESTRUCTURA GIRATORIA:
 		model = glm::translate(modelTempSillas, glm::vec3(0.0f, 0.4f, -1.83f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(0.75f, 1.0f, 1.0f));
 		model = glm::rotate(model, sillasVarGiroPos * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
