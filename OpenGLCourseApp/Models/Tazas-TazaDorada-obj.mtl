@@ -1,0 +1,24 @@
+# Blender MTL File: 'TazaSingle.blend'
+# Material Count: 2
+
+newmtl TazaDetalles
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 0.000000 0.013465
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Tazas-TazaGenericaDetalles-Textura.jpg
+
+newmtl TazaRoja
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.000000 0.003463
+Ks 1.000000 0.705936 0.698080
+Ke 0.040000 0.000000 0.000216
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Tazas-TazaDorada-Textura.jpg

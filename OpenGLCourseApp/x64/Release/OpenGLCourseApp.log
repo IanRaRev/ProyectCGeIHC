@@ -1,0 +1,138 @@
+﻿  Camera.cpp
+  DirectionalLight.cpp
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\directionallight.cpp(18): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\directionallight.cpp(19): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\directionallight.cpp(21): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\directionallight.cpp(22): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  Light.cpp
+  Material.cpp
+  Mesh.cpp
+  Model.cpp
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\model.cpp(15): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const std::string'
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\model.cpp(15): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\model.cpp(15): note: placeholders and their parameters expect 1 variadic arguments, but 2 were provided
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\model.cpp(50): warning C4804: '<': unsafe use of type 'bool' in operation
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\model.cpp(108): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\model.cpp(125): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\model.cpp(132): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+  PointLight.cpp
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\pointlight.cpp(28): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\pointlight.cpp(29): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\pointlight.cpp(30): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\pointlight.cpp(32): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\pointlight.cpp(33): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\pointlight.cpp(34): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\pointlight.cpp(35): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  practica10_alumno.cpp
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.h(17): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.h(18): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\practica10_alumno.cpp(100): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\practica10_alumno.cpp(336): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\practica10_alumno.cpp(373): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  Shader_light.cpp
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(100): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(100): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(103): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(103): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(106): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(106): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(109): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(109): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(112): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(112): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(115): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(115): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(118): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(118): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(128): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(128): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(131): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(131): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(134): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(134): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(137): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(137): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(140): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(140): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(143): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(143): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(146): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(146): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(149): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(149): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(152): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(152): note: consider using '%zd' in the format string
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(202): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(201): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(215): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(214): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(213): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\shader_light.cpp(261): warning C4267: '=': conversion from 'size_t' to 'GLint', possible loss of data
+  Skybox.cpp
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\skybox.cpp(30): warning C4267: 'argument': conversion from 'size_t' to 'GLenum', possible loss of data
+  SpotLight.cpp
+  Texture.cpp
+  Window.cpp
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.h(17): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.h(18): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.cpp(137): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.cpp(138): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.cpp(142): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.cpp(143): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.cpp(145): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\royfocker\desktop\práctica10v1.0\openglcourseapp\window.cpp(146): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+DirectionalLight.obj : error LNK2001: unresolved external symbol __imp___glewUniform1f
+DirectionalLight.obj : error LNK2001: unresolved external symbol __imp___glewUniform3f
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewEnableVertexAttribArray
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBindVertexArray
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewVertexAttribPointer
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBindBuffer
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewDeleteVertexArrays
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBufferData
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewGenVertexArrays
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewGenBuffers
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewDeleteBuffers
+Model.obj : error LNK2001: unresolved external symbol aiGetMaterialTextureCount
+Model.obj : error LNK2001: unresolved external symbol "public: char const * __cdecl Assimp::Importer::GetErrorString(void)const " (?GetErrorString@Importer@Assimp@@QEBAPEBDXZ)
+Model.obj : error LNK2001: unresolved external symbol "public: struct aiScene const * __cdecl Assimp::Importer::ReadFile(char const *,unsigned int)" (?ReadFile@Importer@Assimp@@QEAAPEBUaiScene@@PEBDI@Z)
+Model.obj : error LNK2001: unresolved external symbol "public: __cdecl Assimp::Importer::~Importer(void)" (??1Importer@Assimp@@QEAA@XZ)
+Model.obj : error LNK2001: unresolved external symbol "public: __cdecl Assimp::Importer::Importer(void)" (??0Importer@Assimp@@QEAA@XZ)
+Model.obj : error LNK2001: unresolved external symbol aiGetMaterialTexture
+practica10_alumno.obj : error LNK2001: unresolved external symbol glfwSwapBuffers
+practica10_alumno.obj : error LNK2001: unresolved external symbol __imp___glewUseProgram
+practica10_alumno.obj : error LNK2001: unresolved external symbol glfwGetTime
+practica10_alumno.obj : error LNK2001: unresolved external symbol glfwPollEvents
+practica10_alumno.obj : error LNK2001: unresolved external symbol __imp___glewUniformMatrix4fv
+practica10_alumno.obj : error LNK2001: unresolved external symbol glfwWindowShouldClose
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewGetShaderiv
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewCompileShader
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewCreateShader
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewCreateProgram
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewUniform1i
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewGetShaderInfoLog
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewValidateProgram
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewGetProgramiv
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewGetUniformLocation
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewAttachShader
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewDeleteProgram
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewShaderSource
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewGetProgramInfoLog
+Shader_light.obj : error LNK2001: unresolved external symbol __imp___glewLinkProgram
+Skybox.obj : error LNK2001: unresolved external symbol __imp___glewActiveTexture
+Texture.obj : error LNK2001: unresolved external symbol __imp___glewGenerateMipmap
+Window.obj : error LNK2001: unresolved external symbol glfwGetWindowUserPointer
+Window.obj : error LNK2001: unresolved external symbol glfwGetFramebufferSize
+Window.obj : error LNK2001: unresolved external symbol __imp_glewGetErrorString
+Window.obj : error LNK2001: unresolved external symbol glfwTerminate
+Window.obj : error LNK2001: unresolved external symbol glfwInit
+Window.obj : error LNK2001: unresolved external symbol glfwSetKeyCallback
+Window.obj : error LNK2001: unresolved external symbol glfwSetWindowShouldClose
+Window.obj : error LNK2001: unresolved external symbol glfwCreateWindow
+Window.obj : error LNK2001: unresolved external symbol glfwWindowHint
+Window.obj : error LNK2001: unresolved external symbol glfwMakeContextCurrent
+Window.obj : error LNK2001: unresolved external symbol glfwSetWindowUserPointer
+Window.obj : error LNK2001: unresolved external symbol glfwDestroyWindow
+Window.obj : error LNK2001: unresolved external symbol __imp_glewExperimental
+Window.obj : error LNK2001: unresolved external symbol glfwSetCursorPosCallback
+Window.obj : error LNK2001: unresolved external symbol __imp_glewInit
+C:\Users\royfocker\Desktop\Práctica10v1.0\x64\Release\OpenGLCourseApp.exe : fatal error LNK1120: 54 unresolved externals

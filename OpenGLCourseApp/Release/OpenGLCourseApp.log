@@ -1,0 +1,54 @@
+﻿  Camera.cpp
+  DirectionalLight.cpp
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\DirectionalLight.cpp(18): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\DirectionalLight.cpp(19): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\DirectionalLight.cpp(21): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\DirectionalLight.cpp(22): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  Light.cpp
+  Material.cpp
+  Mesh.cpp
+  Model.cpp
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Model.cpp(15): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const std::string'
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Model.cpp(15): warning C4474: 'printf' : too many arguments passed for format string
+  C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Model.cpp(15): note: placeholders and their parameters expect 1 variadic arguments, but 2 were provided
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Model.cpp(50): warning C4804: '<': unsafe use of type 'bool' in operation
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Model.cpp(50): warning C4018: '<': signed/unsigned mismatch
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Model.cpp(132): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+  PointLight.cpp
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\PointLight.cpp(28): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\PointLight.cpp(29): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\PointLight.cpp(30): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\PointLight.cpp(32): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\PointLight.cpp(33): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\PointLight.cpp(34): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\PointLight.cpp(35): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  proyectoFinal.cpp
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.h(17): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.h(18): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\proyectoFinal.cpp(393): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\proyectoFinal.cpp(430): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  Shader_light.cpp
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Shader_light.cpp(202): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Shader_light.cpp(201): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Shader_light.cpp(215): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Shader_light.cpp(214): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Shader_light.cpp(213): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+  Skybox.cpp
+  SpotLight.cpp
+  Texture.cpp
+  Window.cpp
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.h(17): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.h(18): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.cpp(137): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.cpp(138): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.cpp(142): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.cpp(143): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.cpp(145): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.cpp(146): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+  Generating code
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.cpp(82): warning C4715: 'Window::Initialise': not all control paths return a value
+  966 of 967 functions (99.9%) were compiled, the rest were copied from previous compilation.
+    62 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  OpenGLCourseApp.vcxproj -> C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\Release\OpenGLCourseApp.exe
