@@ -1,0 +1,119 @@
+# Blender MTL File: 'None'
+# Material Count: 11
+
+newmtl Color_000
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 0.886274 0.741177
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Mat.
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.100000 0.100000 0.100000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 1.000000
+illum 2
+
+newmtl Material
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Tile_Border_Travertine
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\75139\\Downloads\\Modelos\\ParkFountainCanopy-02\\Tile_Border_Travertine.jpg
+
+newmtl Tile_Various_Tan
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\75139\\Downloads\\Modelos\\ParkFountainCanopy-02\\Tile_Various_Tan.jpg
+
+newmtl Translucent_Glass_Safety
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\75139\\Downloads\\Modelos\\ParkFountainCanopy-02\\Translucent_Glass_Safety.jpg
+
+newmtl Vegetation_HoneyLocust
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\75139\\Downloads\\Modelos\\ParkFountainCanopy-02\\Vegetation_HoneyLocust.jpg
+
+newmtl Water_Pool_Light
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\75139\\Downloads\\Modelos\\ParkFountainCanopy-02\\Water_Pool_Light.jpg
+
+newmtl __Stone_Brushed_Khaki_1
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\75139\\Downloads\\Modelos\\ParkFountainCanopy-02\\__Stone_Brushed_Khaki_1.jpg
+
+newmtl __Translucent_Glass_Safety_1
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\75139\\Downloads\\Modelos\\ParkFountainCanopy-02\\__Translucent_Glass_Safety_1.jpg
+
+newmtl material
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks -1.000000 -1.000000 -1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 1.000000
+illum 2

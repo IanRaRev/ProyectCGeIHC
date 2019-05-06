@@ -1,11 +1,10 @@
 ﻿  proyectoFinal.cpp
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(17): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(18): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\proyectofinal.cpp(403): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\proyectofinal.cpp(440): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-  Generando código
-  1 of 1039 functions (<0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Generación de código finalizada
-  OpenGLCourseApp.vcxproj -> C:\Users\Ian\Documents\OctavoSemestre\CGeIHC\Proyecto\cjvg_laha_dfb_irr_proyectocgeihc\Release\OpenGLCourseApp.exe
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.h(17): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\Window.h(18): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\OpenGLCourseApp\proyectoFinal.cpp(463): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  Generating code
+  84 of 989 functions ( 8.5%) were compiled, the rest were copied from previous compilation.
+    8 functions were new in current compilation
+    32 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  OpenGLCourseApp.vcxproj -> C:\Users\royfocker\Desktop\ProyectoFinal-ComputacionGrafica\Release\OpenGLCourseApp.exe
