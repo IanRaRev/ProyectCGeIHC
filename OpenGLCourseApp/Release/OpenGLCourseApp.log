@@ -1,11 +1,10 @@
 ﻿  proyectoFinal.cpp
 c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(17): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
 c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(18): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\proyectofinal.cpp(411): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\proyectofinal.cpp(448): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\proyectofinal.cpp(473): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   Generando código
-  4 of 1039 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  93 of 1060 functions ( 8.8%) were compiled, the rest were copied from previous compilation.
+    25 functions were new in current compilation
+    36 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   OpenGLCourseApp.vcxproj -> C:\Users\Ian\Documents\OctavoSemestre\CGeIHC\Proyecto\cjvg_laha_dfb_irr_proyectocgeihc\Release\OpenGLCourseApp.exe
