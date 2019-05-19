@@ -302,6 +302,7 @@ int main()
 
 	camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -60.0f, 0.0f, 5.0f, 0.5f);
 
+	/** T E X T U R A S **/;
 	brickTexture = Texture("Textures/brick.png");
 	brickTexture.LoadTextureA();
 	dirtTexture = Texture("Textures/dirt.png");
@@ -314,9 +315,14 @@ int main()
 	pisoTexture.LoadTextureA();
 	Tagave = Texture("Textures/Agave.tga");
 	Tagave.LoadTextureA();
+
+
+	/** M A T E R I A L E S **/
 	Material_brillante = Material(4.0f, 256);
 	Material_opaco = Material(0.3f, 4);
 
+
+	/** M O D E L O S **/
 	Kitt_M = Model();
 	Kitt_M.LoadModel("Models/kitt.3ds");
 	Llanta_M = Model();
@@ -328,13 +334,13 @@ int main()
 
 	//JUEGOS MECANICOS
 	//JUEGO DE LAS TAZAS
-	//ESTRUCTURA
+	/* Estructura */
 	Tazas_Estructura = Model();
 	Tazas_Estructura.LoadModel("Models/Tazas-Estructura-obj.obj");
-	//BASE GIRATORIA
+	/* Base giratoria */
 	Tazas_BaseGiratoria = Model();
 	Tazas_BaseGiratoria.LoadModel("Models/Tazas-BaseGiratoria-obj.obj");
-	//TAZAS
+	/* Tazas */
 	Tazas_TazaRoja = Model();
 	Tazas_TazaRoja.LoadModel("Models/Tazas-TazaRoja-obj.obj");
 	Tazas_TazaRosa = Model();
@@ -462,11 +468,11 @@ int main()
 			{
 				avanza = 1;
 			}
-
-
 		}
+
 		//Recibir eventos del usuario
 		glfwPollEvents();
+
 
 		camera.keyControl(mainWindow.getKeys(), deltaTime);
 		camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
@@ -505,6 +511,8 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		meshList[2]->RenderMesh();
 		
+
+		//water.UseTexture();
 		
 		/*model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(movCoche, -1.5f, 0.0f));
@@ -570,7 +578,7 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tazas_BaseGiratoria.RenderModel();
-		//Giro base:
+		/* Giro base */
 		tazasVarEstructuraGiro += 60.0f*deltaTime;
 		if (tazasVarEstructuraGiro == 360.0f) {
 			tazasVarEstructuraGiro = 0.0f;
