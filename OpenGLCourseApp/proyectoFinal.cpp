@@ -51,6 +51,9 @@ Texture dirtTexture;
 Texture plainTexture;
 Texture dadoTexture;
 Texture pisoTexture;
+Texture maderaCasa;
+Texture fachadaCasa;
+
 
 //materiales
 Material Material_brillante;
@@ -72,7 +75,17 @@ float tazasVarEstructuraGiro = 0.0f;
 float tazasVarTazaGiroPos = 0.0f;
 float tazasVarTazaGiroNeg = 0.0f;
 
+
 float sillasVarGiroPos = 0.0f;
+
+float craneoPos=0.0f;
+int craneoControl = 0;
+
+float movPajaro = 0.0f;
+float giroPajaro = 0.0f;
+int controlPajaro = 0;
+float giroEsqueleto = 90.0f;
+int controlEsqueleto = 0;
 
 //MODELOS PROYECTO FINAL
 //Juego de las tazas:
@@ -102,6 +115,14 @@ Model Banca;
 Model Carpa;
 Model Tree;
 Model Carrusel;
+Model Cerca;
+Model Tumba;
+Model Calabaza;
+Model Craneo;
+Model Cuervo;
+Model Grave;
+Model Esqueleto;
+Model Araña;
 
 /* Skybox */
 Skybox skybox;
@@ -293,6 +314,130 @@ void CrearCubo()
 
 }
 
+void CrearCasa()
+{
+
+
+	unsigned int casaIndices[] = {
+		0, 2, 1,
+		1, 2, 3,
+		0, 4, 1
+	};
+
+	GLfloat casaVertices[] = {
+		-1.0f, 0.0f, -1.0f,		0.18f, 0.65f,		0.0f, -1.0f, 0.0f,
+		1.0f, 0.0f, -1.0f,		0.87f, 0.67f,		0.0f, -1.0f, 0.0f,
+		-1.0f, 0.0f, 1.0f,		0.17f, 0.01f,		0.0f, -1.0f, 0.0f,
+		1.0f, 0.0f, 1.0f,		0.87f, 0.0f,		0.0f, -1.0f, 0.0f,
+		0.0f, 0.0f, -2.0f,		0.54f, 0.99f,		0.0f, -1.0f, 0.0f,
+		
+	};
+
+	unsigned int techoIndices[] = {
+		0, 4, 2,
+		2, 4, 5,
+		1, 4, 3,
+		4, 3, 5
+	};
+
+	GLfloat techoVertices[] = {
+		-1.0f, 0.0f, -1.0f,		0.18f, 0.65f,		0.0f, -1.0f, 0.0f, 
+		1.0f, 0.0f, -1.0f,		0.87f, 0.67f,		0.0f, -1.0f, 0.0f,
+		-1.0f, 1.0f, -1.0f,		0.18f, 0.65f,		0.0f, -1.0f, 0.0f,
+		1.0f, 1.0f, -1.0f,		0.87f, 0.67f,		0.0f, -1.0f, 0.0f,
+		0.0f, 0.0f, -2.0f,		0.54f, 0.99f,		0.0f, -1.0f, 0.0f,
+		0.0f, 1.0f, -2.0f,		0.54f, 0.99f,		0.0f, -1.0f, 0.0f
+
+	};
+
+
+
+	unsigned int cubo2_indices[] = {
+		// front
+		0, 1, 2,
+		2, 3, 0,
+		// right
+		4, 5, 6,
+		6, 7, 4,
+		// back
+		8, 9, 10,
+		10, 11, 8,
+
+		// left
+		12, 13, 14,
+		14, 15, 12,
+		// bottom
+		16, 17, 18,
+		18, 19, 16,
+		// top
+		20, 21, 22,
+		22, 23, 20,
+	};
+	//Ejercicio 1: reemplazar con sus dados de 6 caras texturizados, agregar normales
+// average normals
+	GLfloat cubo2_vertices[] = {
+		// front
+		//x		y		z		S		T			NX		NY		NZ
+		-0.5f, -0.5f,  0.5f,	0.0f,  0.0f,		0.0f,	0.0f,	-1.0f,	//0
+		0.5f, -0.5f,  0.5f,		1.0f,	0.0f,		0.0f,	0.0f,	-1.0f,	//1
+		0.5f,  0.5f,  0.5f,		0.0f,	1.0f,		0.0f,	0.0f,	-1.0f,	//2
+		-0.5f,  0.5f,  0.5f,	1.0f,  1.0f,		0.0f, 0.0f, -1.0f,	//3
+		// right
+		//x		y		z		S		T
+		0.5f, -0.5f,  0.5f,	    0.0f,  0.0f,		-1.0f,	0.0f,	0.0f,
+		0.5f, -0.5f,  -0.5f,	1.0f,	0.0f,		-1.0f,	0.0f,	0.0f,
+		0.5f,  0.5f,  -0.5f,	0.0f,	1.0f,		-1.0f,	0.0f,	0.0f,
+		0.5f,  0.5f,  0.5f,	    1.0f,	1.0f,		-1.0f,	0.0f,	0.0f,
+		// back
+		-0.5f, -0.5f, -0.5f,	0.0f,	0.0f,		0.0f,	0.0f,	1.0f,
+		0.5f, -0.5f, -0.5f,		1.0f,	0.0f,		0.0f,	0.0f,	1.0f,
+		0.5f,  0.5f, -0.5f,		0.0f,	1.0f,		0.0f,	0.0f,	1.0f,
+		-0.5f,  0.5f, -0.5f,	1.0f,	1.0f,		0.0f,	0.0f,	1.0f,
+
+		// left
+		//x		y		z		S		T
+		-0.5f, -0.5f,  -0.5f,	0.0f,	0.0f,		1.0f,	0.0f,	0.0f,
+		-0.5f, -0.5f,  0.5f,	1.0f,  0.0f,		1.0f,	0.0f,	0.0f,
+		-0.5f,  0.5f,  0.5f,	0.0f,	1.0f,		1.0f,	0.0f,	0.0f,
+		-0.5f,  0.5f,  -0.5f,	1.0f,	1.0f,		1.0f,	0.0f,	0.0f,
+
+		// bottom
+		//x		y		z		S		T
+		-0.5f, -0.5f,  0.5f,	0.0f,	0.0f,		0.0f,	1.0f,	0.0f,
+		0.5f,  -0.5f,  0.5f,	1.0f,  0.0f,		0.0f,	1.0f,	0.0f,
+		 0.5f,  -0.5f,  -0.5f,	0.0f,	1.0f,		0.0f,	1.0f,	0.0f,
+		-0.5f, -0.5f,  -0.5f,	1.0f,	1.0f,		0.0f,	1.0f,	0.0f,
+
+		//UP
+		 //x		y		z		S		T
+		 -0.5f, 0.5f,  0.5f,	0.0f,	0.0f,		0.0f,	-1.0f,	0.0f,
+		 0.5f,  0.5f,  0.5f,	1.0f,  0.0f,		0.0f,	-1.0f,	0.0f,
+		  0.5f, 0.5f,  -0.5f,	0.0f,	1.0f,		0.0f,	-1.0f,	0.0f,
+		 -0.5f, 0.5f,  -0.5f,	1.0f,	1.0f,		0.0f,	-1.0f,	0.0f,
+
+	};
+
+
+
+
+	//  Fachada y piso. Solo es un cuadro
+	Mesh *casa = new Mesh();
+	casa->CreateMesh(casaVertices, casaIndices, 40, 9);
+	meshList.push_back(casa);
+
+	// Base rectangular de la casa
+	Mesh *base = new Mesh();
+	base->CreateMesh(cubo2_vertices, cubo2_indices, 160, 30);
+	meshList.push_back(base);
+	// Techo
+	Mesh *techo = new Mesh();
+	techo->CreateMesh(techoVertices, techoIndices, 48, 12);
+	meshList.push_back(techo);
+
+
+
+}
+
 void CreateShaders()
 {
 	Shader* shader1 = new Shader();
@@ -306,7 +451,8 @@ int main()
 	mainWindow.Initialise();
 
 	CreateObjects();
-	CrearCubo();
+	CrearCubo(); //meshList[4] Cubo, meshList[5] cuadro
+	CrearCasa(); //meshList[6] Fachada, meshList[7] Base ,meshList[8] techo
 	CreateShaders();
 
 	camera = Camera(glm::vec3(-5.0f, 0.0f, 40.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 5.0f, 0.5f);
@@ -323,13 +469,21 @@ int main()
 	pisoTexture = Texture("Textures/plain.png");
 	pisoTexture.LoadTextureA();
 
+	maderaCasa = Texture("Textures/madera.tga");
+	maderaCasa.LoadTexture();
+	fachadaCasa = Texture("Textures/fachada.jpg");
+	fachadaCasa.LoadTexture();
+	
+	
+
+
 	/*Tagave = Texture("Textures/Agave.tga");
 	Tagave.LoadTextureA();*/
 
 
 	/** M A T E R I A L E S **/
 
-	wc = Texture("Textures/wc.png");
+	wc = Texture("Textures/wc.tga");
 	wc.LoadTexture();
 	Material_brillante = Material(4.0f, 256);
 	Material_opaco = Material(0.3f, 4);
@@ -346,6 +500,22 @@ int main()
 	Camino_M.LoadModel("Models/railroad track.obj");
 	Excusado = Model();
 	Excusado.LoadModel("Models/toilet.obj");
+	Cerca = Model();
+	Cerca.LoadModel("Models/Old Fence.obj");
+	Tumba = Model();
+	Tumba.LoadModel("Models/ObjTomb.obj");
+	Calabaza = Model();
+	Calabaza.LoadModel("Models/Halloween_Pumpkin.obj");
+	Craneo = Model();
+	Craneo.LoadModel("Models/Skull.obj");
+	Cuervo = Model();
+	Cuervo.LoadModel("Models/bird.obj");
+	Grave = Model();
+	Grave.LoadModel("Models/grave.obj");
+	Esqueleto = Model();
+	Esqueleto.LoadModel("Models/skeleton.obj");
+	Araña = Model();
+	Araña.LoadModel("Models/spider.obj");
 
 	//JUEGOS MECANICOS
 	//JUEGO DE LAS TAZAS
@@ -412,10 +582,10 @@ int main()
 		0.3f, 0.2f, 0.1f);
 	pointLightCount++;
 
-	//Carpa central
-	pointLights[1] = PointLight(1.0f, 0.0f, 0.0f,
-		0.0f, 1.0f,
-		-5.0f, -2.0f, -35.0f,
+	//Casa 
+	pointLights[1] = PointLight(1.0f, 0.0f, 1.0f,
+		1.0f, 5.0f,
+		-50.0f, 5.0f, 8.0f,
 		0.3f, 0.2f, 0.1f);
 	pointLightCount++;
 
@@ -534,7 +704,9 @@ int main()
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
 		glUniform3f(uniformEyePosition, camera.getCameraPosition().x, camera.getCameraPosition().y, camera.getCameraPosition().z);
 
+		//Matrices
 		glm::mat4 model(1.0);
+		glm::mat4 modelTerror(1.0);
 
 		//Piso
 		model = glm::mat4(1.0);
@@ -1279,9 +1451,9 @@ int main()
 		meshList[5]->RenderMesh();
 		//Letrero
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(29.0f, 2.0f, -21.0f));
+		model = glm::translate(model, glm::vec3(29.0f, 2.0f, -28.0f));
 		model = glm::scale(model, glm::vec3(7.0f, 3.0f, 7.0f));
-		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		wc.UseTexture();
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -1388,6 +1560,393 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tree.RenderModel();
+
+		//Casa del terror
+		//Base casa
+		model = glm::mat4(1.0);
+		modelTerror = model = glm::translate(model, glm::vec3(-60.0f, 3.3f, 8.0f));
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model= glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(20.0f, 30.0f, 10.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		maderaCasa.UseTexture();
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		meshList[7]->RenderMesh(); 
+
+		//Fachada
+		model = glm::translate(modelTerror, glm::vec3(15.0f, -0.25f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(10.0f, 1.0f, 5.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		fachadaCasa.UseTexture();
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		meshList[6]->RenderMesh(); 
+
+		//Techo
+		model = glm::translate(modelTerror, glm::vec3(15.0f, -0.25f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(10.0f, 30.0f, 5.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		maderaCasa.UseTexture();
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		meshList[8]->RenderMesh();
+
+		//Fachada
+		model = glm::translate(modelTerror, glm::vec3(-15.1f, -0.25f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(10.0f, 1.0f, 5.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		fachadaCasa.UseTexture();
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		meshList[6]->RenderMesh();
+		
+		//Cercas
+		model = glm::translate(modelTerror, glm::vec3(21.8f, -4.0f, -12.5f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(21.8f, -4.0f, -7.7f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(21.8f, -4.0f, 2.9f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(21.8f, -4.0f, 7.7f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(21.8f, -4.0f, 12.5f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(19.2f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(14.4f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(9.6f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(4.8f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(0.0f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-4.8f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-9.6f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-14.4f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-17.0f, -4.0f, 15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		//
+		model = glm::translate(modelTerror, glm::vec3(19.2f, -4.0f, -15.0f));
+		model = glm::rotate(model, -180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(14.4f, -4.0f, -15.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(9.6f, -4.0f, -15.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(4.8f, -4.0f, -15.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(0.0f, -4.0f, -15.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-4.8f, -4.0f, -15.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-9.6f, -4.0f, -15.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-14.4f, -4.0f, -15.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-17.0f, -4.0f, -15.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cerca.RenderModel();
+
+		//Tumbas
+		model = glm::translate(modelTerror, glm::vec3(8.0f, -4.3f, 13.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Tumba.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(20.0f, -4.3f, 10.0f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Tumba.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(20.0f, -4.3f, -6.0f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Tumba.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(12.0f, -4.3f, 5.0f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Tumba.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(12.0f, -4.3f, -7.0f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Tumba.RenderModel();
+
+		//Calabazas
+		model = glm::translate(modelTerror, glm::vec3(-14.0f, -5.3f, -5.0f));
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Calabaza.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-14.0f, -5.3f, 5.0f));
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Calabaza.RenderModel();
+
+		//Craneos
+		model = glm::translate(modelTerror, glm::vec3(12.5f, -6.7f + craneoPos, 5.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Craneo.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(12.5f, -6.7f + craneoPos, -7.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Craneo.RenderModel();
+
+		//Grave central
+		model = glm::translate(modelTerror, glm::vec3(0.0f, -5.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Grave.RenderModel();
+
+		//Esqueleto central
+		model = glm::translate(modelTerror, glm::vec3(0.0f, -5.0f, 0.0f));
+		model = glm::rotate(model, giroEsqueleto * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.9f, 0.9f, 0.9f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Esqueleto.RenderModel();
+
+		//Cuervos cuervos 
+		model = glm::translate(modelTerror, glm::vec3(0.0f, 4.0f, 7.0f-movPajaro));
+		model = glm::rotate(model, 180+giroPajaro * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cuervo.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(-5.0f, 4.0f, 7.0f-movPajaro));
+		model = glm::rotate(model, 180+giroPajaro * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cuervo.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(5.0f, 4.0f, 7.0f-movPajaro));
+		model = glm::rotate(model, 180+giroPajaro * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Cuervo.RenderModel();
+
+		//Arañas
+		model = glm::translate(modelTerror, glm::vec3(0.0f, -5.0f, 3.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Araña.RenderModel();
+
+		model = glm::translate(modelTerror, glm::vec3(0.0f, -5.0f, -3.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Araña.RenderModel();
+		
+
+		//Animación de craneos
+		if (craneoPos <= 0)
+		{
+			craneoControl = 0;
+
+		}
+
+		if (craneoPos >= 2.5)
+		{
+			craneoControl = 1;
+
+		}
+
+		if (craneoControl == 0)
+		{
+			craneoPos += 0.005f;
+		}
+
+		if (craneoControl == 1)
+		{
+			craneoPos -= 0.005f;
+		}
+
+		//Animación cuervos
+		if (movPajaro >= 10.0) {
+			controlPajaro = 1;
+		}
+		else if (movPajaro <= 0.0) {
+			controlPajaro = 0;
+		}
+
+		if (controlPajaro == 1)
+		{
+			movPajaro -= 0.01f;
+			giroPajaro = 180;
+		}
+
+		if (controlPajaro == 0)
+		{
+			movPajaro += 0.01f;
+			giroPajaro = 0;
+		}
+
+		//Animacion central
+		if (giroEsqueleto >= 90)
+		{
+			controlEsqueleto = 0;
+		}
+
+		if (giroEsqueleto <= 0)
+		{
+			controlEsqueleto = 1;
+		}
+
+		if (controlEsqueleto == 0)
+		{
+			giroEsqueleto -= 0.1f;
+		}
+
+		if (controlEsqueleto == 1)
+		{
+			giroEsqueleto += 0.1f;
+		}
 
 
 
