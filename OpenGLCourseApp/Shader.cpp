@@ -108,6 +108,12 @@ void Shader::useShader()
 
 }
 
+GLint Shader::getUniformLocation(std::string strVariable) {
+	if (!ShaderProgramId)
+		return -1;
+	return glGetUniformLocation(ShaderProgramId, strVariable.c_str());
+}
+
 void Shader::ClearShader()
 {
 	if (!shaderID)

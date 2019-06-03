@@ -95,11 +95,17 @@
     <ClInclude Include="Skybox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FreeImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader_light.frag" />
     <None Include="shader_light.vert" />
     <None Include="skybox.frag" />
     <None Include="skybox.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="FreeImaged.lib" />
   </ItemGroup>
 </Project>

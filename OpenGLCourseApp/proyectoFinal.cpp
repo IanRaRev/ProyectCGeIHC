@@ -8,18 +8,20 @@ Skybox: Se agrega Skybox como textura ligada a la cámara.
 #define STB_IMAGE_IMPLEMENTATION
 
 #include <stdio.h>
-#include <string.h>
+#include <string.h> 
 #include <cmath>
 #include <vector>
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <GL/glew.h> 
+#include <GLFW/glfw3.h> 
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 //para probar el importer
 //#include<assimp/Importer.hpp>
+
+
 
 #include "Window.h"
 #include "Mesh_texturizado.h"
@@ -33,9 +35,11 @@ Skybox: Se agrega Skybox como textura ligada a la cámara.
 #include "PointLight.h"
 #include "Material.h"
 
+
 #include"Model.h"
 #include "Skybox.h"
 #include"SpotLight.h"
+
 
 const float toRadians = 3.14159265f / 180.0f;
 float movCoche;
@@ -54,6 +58,8 @@ Texture pisoTexture;
 Texture maderaCasa;
 Texture fachadaCasa;
 
+Texture asientos;
+
 
 //materiales
 Material Material_brillante;
@@ -68,6 +74,7 @@ Model Kitt_M;
 Model Llanta_M;
 Model Camino_M;
 Model Blackhawk_M;
+
 
 //PROYECTO FINAL
 //VARS PROYECTO FINAL
@@ -87,8 +94,12 @@ int controlPajaro = 0;
 float giroEsqueleto = 90.0f;
 int controlEsqueleto = 0;
 
+
+/* Var Carrusel */
+float carruajeGiro = 0.0f;
+
 //MODELOS PROYECTO FINAL
-//Juego de las tazas:
+/* Juego Tazas*/
 Model Tazas_TazaRoja;
 Model Tazas_TazaRosa;
 Model Tazas_TazaDorada;
@@ -99,11 +110,11 @@ Model Tazas_TazaMorada;
 Model Tazas_Estructura;
 Model Tazas_BaseGiratoria;
 
-//Juego de las sillas:
+/* Juego de las sillas*/
 Model Sillas_BaseMetalica;
 Model Sillas_EstructuraGiro;
 
-//Relleno
+/* Ambiente */
 Model Pruebas;
 Model Lampara;
 Model Pasto;
@@ -115,6 +126,8 @@ Model Banca;
 Model Carpa;
 Model Tree;
 Model Carrusel;
+
+/* Casa del terror */
 Model Cerca;
 Model Tumba;
 Model Calabaza;
@@ -123,6 +136,11 @@ Model Cuervo;
 Model Grave;
 Model Esqueleto;
 Model Araña;
+
+/* Gradas */
+Model Gradas;
+Model Agua;
+
 
 /* Skybox */
 Skybox skybox;
@@ -469,10 +487,13 @@ int main()
 	pisoTexture = Texture("Textures/plain.png");
 	pisoTexture.LoadTextureA();
 
+	asientos = Texture("Models/grandstand/generic medium_01_c.png");
+
 	maderaCasa = Texture("Textures/madera.tga");
 	maderaCasa.LoadTexture();
 	fachadaCasa = Texture("Textures/fachada.jpg");
 	fachadaCasa.LoadTexture();
+
 	
 	
 
@@ -548,7 +569,7 @@ int main()
 	Sillas_EstructuraGiro = Model();
 	Sillas_EstructuraGiro.LoadModel("Models/Sillas-EstructuraGiratoria-obj.obj");
 
-	//OBJETOS DE RELLENO
+	/* Ambiente*/
 	Lampara = Model();
 	Lampara.LoadModel("Models/lamp.obj");
 	Pruebas = Model();
@@ -567,6 +588,15 @@ int main()
 	Tree.LoadModel("Models/Tree1.3ds");
 	Carrusel = Model();
 	Carrusel.LoadModel("Models/carrusel.obj");
+
+
+	/* Gradas  */
+	Gradas = Model();
+	Gradas.LoadModel("Models/grandstand/generic medium.obj");
+
+	/* Agua*/
+	Agua = Model();
+	Agua.LoadModel("Models/20-ocean/mar.blend");
 
 
 	//luz direccional, sólo 1 y siempre debe de existir
@@ -649,24 +679,19 @@ int main()
 		{
 			if (movCoche < 10.0f)
 			{
-				movCoche += movOffset*deltaTime;
+				movCoche += movOffset * deltaTime;
 				avanza = 1;
 			}
 			else
-			{
 				avanza = 0;
-			}
 		}
 		else
 		{
 			if (movCoche > -10.0f)
-			{
 				movCoche -= movOffset*deltaTime;
-			}
+
 			else
-			{
 				avanza = 1;
-			}
 		}
 
 
@@ -1508,10 +1533,10 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Banca.RenderModel();
 
-		//Carpa de circo
+		/* Carpa de circo */
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(-5.0f, -2.0f, -40.0f));
-		model = glm::scale(model, glm::vec3(0.005f, 0.005f, 0.005f));
+		model = glm::translate(model, glm::vec3(-50.0f, -2.0f, -55.0f));
+		model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -1522,7 +1547,7 @@ int main()
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(60.0f, -2.0f, -10.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, -90.0f * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Carrusel.RenderModel();
@@ -1561,7 +1586,17 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tree.RenderModel();
 
-		//Casa del terror
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		asientos.UseTexture();
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Gradas.RenderModel();
+
+
+
+		/** C A S A   D E L  T E R R O R  **/
 		//Base casa
 		model = glm::mat4(1.0);
 		modelTerror = model = glm::translate(model, glm::vec3(-60.0f, 3.3f, 8.0f));
@@ -1847,7 +1882,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Esqueleto.RenderModel();
 
-		//Cuervos cuervos 
+		/* Cuervos cuervos */
 		model = glm::translate(modelTerror, glm::vec3(0.0f, 4.0f, 7.0f-movPajaro));
 		model = glm::rotate(model, 180+giroPajaro * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
@@ -1886,34 +1921,27 @@ int main()
 
 		//Animación de craneos
 		if (craneoPos <= 0)
-		{
 			craneoControl = 0;
 
-		}
 
 		if (craneoPos >= 2.5)
-		{
 			craneoControl = 1;
 
-		}
 
 		if (craneoControl == 0)
-		{
 			craneoPos += 0.005f;
-		}
+
 
 		if (craneoControl == 1)
-		{
 			craneoPos -= 0.005f;
-		}
+
 
 		//Animación cuervos
-		if (movPajaro >= 10.0) {
+		if (movPajaro >= 10.0) 
 			controlPajaro = 1;
-		}
-		else if (movPajaro <= 0.0) {
+
+		else if (movPajaro <= 0.0) 
 			controlPajaro = 0;
-		}
 
 		if (controlPajaro == 1)
 		{
@@ -1929,24 +1957,16 @@ int main()
 
 		//Animacion central
 		if (giroEsqueleto >= 90)
-		{
 			controlEsqueleto = 0;
-		}
 
 		if (giroEsqueleto <= 0)
-		{
 			controlEsqueleto = 1;
-		}
 
 		if (controlEsqueleto == 0)
-		{
 			giroEsqueleto -= 0.1f;
-		}
 
 		if (controlEsqueleto == 1)
-		{
 			giroEsqueleto += 0.1f;
-		}
 
 
 
@@ -1965,6 +1985,17 @@ int main()
 			sillasVarGiroPos = 0.0f;
 		}
 		*/
+
+		/* Animación carrusel */
+		if (mainWindow.mueveCarrusel())
+		{
+			carruajeGiro += 1.0f;
+			carruajeGiro = carruajeGiro * toRadians;
+			if (carruajeGiro = 360.0f)
+			{
+				carruajeGiro = 0.0;
+			}
+		}
 
 		glUseProgram(0);
 

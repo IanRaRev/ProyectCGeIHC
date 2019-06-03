@@ -1,52 +1,11 @@
-﻿  Camera.cpp
-  DirectionalLight.cpp
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\directionallight.cpp(18): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\directionallight.cpp(19): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\directionallight.cpp(21): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\directionallight.cpp(22): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-  Light.cpp
-  Material.cpp
-  Mesh.cpp
-  Model.cpp
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\model.cpp(15): warning C4477: 'printf' : la cadena de formato '%s' requiere un argumento de tipo 'char *', pero el argumento variádico 1 tiene el tipo 'const std::string'
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\model.cpp(15): warning C4474: "printf": se pasaron demasiados argumentos para la cadena de formato
-  c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\model.cpp(15): note: los marcadores de posición y sus parámetros esperan 1 argumentos variádicos, pero se proporcionaron 2
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\model.cpp(50): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\model.cpp(50): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\model.cpp(132): warning C4477: 'printf' : la cadena de formato '%s' requiere un argumento de tipo 'char *', pero el argumento variádico 1 tiene el tipo 'std::string'
-  PointLight.cpp
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\pointlight.cpp(28): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\pointlight.cpp(29): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\pointlight.cpp(30): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\pointlight.cpp(32): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\pointlight.cpp(33): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\pointlight.cpp(34): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\pointlight.cpp(35): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
-  Shader_light.cpp
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\shader_light.cpp(202): warning C4244: 'argumento': conversión de 'GLuint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\shader_light.cpp(201): warning C4244: 'argumento': conversión de 'GLuint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\shader_light.cpp(215): warning C4244: 'argumento': conversión de 'GLuint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\shader_light.cpp(214): warning C4244: 'argumento': conversión de 'GLuint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\shader_light.cpp(213): warning C4244: 'argumento': conversión de 'GLuint' a 'GLfloat'; posible pérdida de datos
-  Skybox.cpp
-  SpotLight.cpp
-  Texture.cpp
-  Window.cpp
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(17): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(18): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(137): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(138): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(142): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(143): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(145): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(146): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-  proyectoFinal.cpp
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(17): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(18): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\proyectofinal.cpp(644): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-  Generando código
-  104 of 1081 functions ( 9.6%) were compiled, the rest were copied from previous compilation.
-    21 functions were new in current compilation
-    25 functions had inline decision re-evaluated but remain unchanged
-  Generación de código finalizada
-  OpenGLCourseApp.vcxproj -> C:\Users\Ian\Documents\OctavoSemestre\CGeIHC\Proyecto\cjvg_laha_dfb_irr_proyectocgeihc\Release\OpenGLCourseApp.exe
+﻿Mesh.obj : error LNK2001: símbolo externo "public: void __thiscall Texture::bind(unsigned int)" (?bind@Texture@@QAEXI@Z) sin resolver
+Mesh.obj : error LNK2001: símbolo externo "public: int __thiscall Shader::getUniformLocation(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?getUniformLocation@Shader@@QAEHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) sin resolver
+Model.obj : error LNK2001: símbolo externo "public: bool __thiscall Texture::load(void)" (?load@Texture@@QAE_NXZ) sin resolver
+Model.obj : error LNK2001: símbolo externo "public: __thiscall Texture::Texture(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Texture@@QAE@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) sin resolver
+proyectoFinal.obj : error LNK2001: símbolo externo "public: void __thiscall Mesh::RenderMesh(void)" (?RenderMesh@Mesh@@QAEXXZ) sin resolver
+proyectoFinal.obj : error LNK2001: símbolo externo "public: void __thiscall Mesh::CreateMesh(float *,unsigned int *,unsigned int,unsigned int)" (?CreateMesh@Mesh@@QAEXPAMPAIII@Z) sin resolver
+proyectoFinal.obj : error LNK2001: símbolo externo "public: __thiscall Mesh::Mesh(void)" (??0Mesh@@QAE@XZ) sin resolver
+proyectoFinal.obj : error LNK2001: símbolo externo "public: __thiscall Model::~Model(void)" (??1Model@@QAE@XZ) sin resolver
+proyectoFinal.obj : error LNK2001: símbolo externo "public: void __thiscall Model::RenderModel(void)" (?RenderModel@Model@@QAEXXZ) sin resolver
+proyectoFinal.obj : error LNK2001: símbolo externo "public: void __thiscall Model::LoadModel(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?LoadModel@Model@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) sin resolver
+C:\Users\Ian\Documents\OctavoSemestre\CGeIHC\Proyecto\cjvg_laha_dfb_irr_proyectocgeihc\Release\OpenGLCourseApp.exe : fatal error LNK1120: 10 externos sin resolver

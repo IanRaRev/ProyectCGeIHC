@@ -13,6 +13,8 @@
 #include "PointLight.h"
 #include "SpotLight.h"
 
+GLuint ShaderProgramId;
+
 class Shader
 {
 public:
@@ -37,6 +39,13 @@ public:
 	void SetDirectionalLight(DirectionalLight * dLight);
 	void SetPointLights(PointLight * pLight, unsigned int lightCount);
 	void SetSpotLights(SpotLight * sLight, unsigned int lightCount);
+
+	void turnOn() {
+		glUseProgram(ShaderProgramId);
+	}
+	void turnOff() {
+		glUseProgram(0);
+	}
 
 	void UseShader();
 	void ClearShader();
