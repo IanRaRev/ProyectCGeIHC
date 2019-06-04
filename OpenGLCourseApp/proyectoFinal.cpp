@@ -8,20 +8,18 @@ Skybox: Se agrega Skybox como textura ligada a la cámara.
 #define STB_IMAGE_IMPLEMENTATION
 
 #include <stdio.h>
-#include <string.h> 
+#include <string.h>
 #include <cmath>
 #include <vector>
 
-#include <GL/glew.h> 
-#include <GLFW/glfw3.h> 
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 //para probar el importer
 //#include<assimp/Importer.hpp>
-
-
 
 #include "Window.h"
 #include "Mesh_texturizado.h"
@@ -35,11 +33,9 @@ Skybox: Se agrega Skybox como textura ligada a la cámara.
 #include "PointLight.h"
 #include "Material.h"
 
-
 #include"Model.h"
 #include "Skybox.h"
 #include"SpotLight.h"
-
 
 const float toRadians = 3.14159265f / 180.0f;
 float movCoche;
@@ -50,6 +46,8 @@ std::vector<Mesh*> meshList;
 std::vector<Shader> shaderList;
 Camera camera;
 
+
+/* T E X T U R A S*/
 Texture brickTexture;
 Texture dirtTexture;
 Texture plainTexture;
@@ -57,49 +55,46 @@ Texture dadoTexture;
 Texture pisoTexture;
 Texture maderaCasa;
 Texture fachadaCasa;
-
+Texture wc;
+Texture agua;
 Texture asientos;
 
 
-//materiales
+/* Materiales */
 Material Material_brillante;
 Material Material_opaco;
-//luz direccional
+
+/* Directional Light */
 DirectionalLight mainLight;
-//para declarar varias luces de tipo pointlight
+
+/* Luces spotlight */
 PointLight pointLights[MAX_POINT_LIGHTS];
 SpotLight spotLights[MAX_SPOT_LIGHTS];
 
-Model Kitt_M;
-Model Llanta_M;
-Model Camino_M;
-Model Blackhawk_M;
 
 
-//PROYECTO FINAL
-//VARS PROYECTO FINAL
+
+/* Variables de movimiento */
+/* Tazas */
 float tazasVarEstructuraGiro = 0.0f;
 float tazasVarTazaGiroPos = 0.0f;
 float tazasVarTazaGiroNeg = 0.0f;
 
-
+/* Sillas */
 float sillasVarGiroPos = 0.0f;
 
+/* Casa del terror */
 float craneoPos=0.0f;
 int craneoControl = 0;
-
 float movPajaro = 0.0f;
 float giroPajaro = 0.0f;
 int controlPajaro = 0;
 float giroEsqueleto = 90.0f;
 int controlEsqueleto = 0;
 
+/** M O D E L O S **/
 
-/* Var Carrusel */
-float carruajeGiro = 0.0f;
-
-//MODELOS PROYECTO FINAL
-/* Juego Tazas*/
+/* Tazas */
 Model Tazas_TazaRoja;
 Model Tazas_TazaRosa;
 Model Tazas_TazaDorada;
@@ -110,18 +105,21 @@ Model Tazas_TazaMorada;
 Model Tazas_Estructura;
 Model Tazas_BaseGiratoria;
 
-/* Juego de las sillas*/
+/* Sillas giratorias */
 Model Sillas_BaseMetalica;
 Model Sillas_EstructuraGiro;
 
 /* Ambiente */
+Model Kitt_M;
+Model Llanta_M;
+Model Camino_M;
+Model Blackhawk_M;
 Model Pruebas;
 Model Lampara;
 Model Pasto;
 Model Kilahuea;
 Model Muro;
 Model Excusado;
-Texture wc;
 Model Banca;
 Model Carpa;
 Model Tree;
@@ -137,10 +135,9 @@ Model Grave;
 Model Esqueleto;
 Model Araña;
 
-/* Gradas */
+/* Espectaculo acuático */
+Model Tobogan;
 Model Gradas;
-Model Agua;
-
 
 /* Skybox */
 Skybox skybox;
@@ -456,6 +453,87 @@ void CrearCasa()
 
 }
 
+void CrearCirculo()
+{
+	unsigned int circulo_indices[] = {
+		//tfront
+		0,1,2,
+		//tright
+		0,2,3,
+		//tr1
+		0,3,4,
+		//tr2
+		0,4,5,
+		//tback
+		0,5,6,
+		//tleft
+		0,6,7,
+		//tl1
+		0,7,8,
+		//tl2
+		0,8,9,
+		0,9,10,
+		0,10,11,
+		0,11,12,
+		0,12,13,
+		0,13,14,
+		0,14,15,
+		0,15,16,
+		0,16,17,
+		0,17,18,
+		0,18,19,
+		0,19,20,
+		0,20,21,
+		0,21,22,
+		0,22,23,
+		0,23,24,
+		0,24,25,
+		0,25,26,
+		0,26,27,
+		0,27,28,
+		0,28,1,
+	};
+
+	GLfloat circulo_vertices[] = {
+		0.0f,  0.0f,  0.0f,		0.0f,	0.0f,		0.0f,	0.0f,	-1.0f,	//0 A
+	   0.0f,  0.0f,  -1.0f,		0.0f,	-1.0f,		0.0f,	0.0f,	-1.0f,	//1 C
+	   0.28f,  0.0f,  -0.97f,		0.28f,	-0.97f,		0.0f,	0.0f,	-1.0f,	//D
+	   0.51f,  0.0f,  -0.87f,		0.51f,	-0.87f,		0.0f,	0.0f,	-1.0f,	//B
+	   0.67f,  0.0f,  -0.75f,		0.67f,	-0.75f,		0.0f,	0.0f,	-1.0f,	//E
+	   0.81f,  0.0f,  -0.61f,		0.81f,	-0.61f,		0.0f,	0.0f,	-1.0f, //F
+	   0.93f,  0.0f,  -0.4f,		0.93f,	-0.4f,		0.0f,	0.0f,	-1.0f,//G
+	   0.99f,  0.0f,  -0.2f,		0.99f,	-0.2f,		0.0f,	0.0f,	-1.0f,//H
+	   1.01f,  0.0f,  0.0f,			1.01f,	0.0f,		0.0f,	0.0f,	-1.0f,//I
+	   0.99f,  0.0f,  0.2f,		0.99f,	0.2f,		0.0f,	0.0f,	-1.0f,//J
+	   0.92f,  0.0f,  0.41f,		0.92f,	0.41f,		0.0f,	0.0f,	-1.0f,//K
+	   0.81f,  0.0f,  0.61f,		0.81f,	0.61f,		0.0f,	0.0f,	-1.0f,//L
+	   0.61f,  0.0f,  0.81f,		0.61f,	0.81f,		0.0f,	0.0f,	-1.0f,//M
+	   0.4f,  0.0f,  0.93f,		0.4f,	0.93f,		0.0f,	0.0f,	-1.0f,//N
+	   0.2f,  0.0f,  0.99f,		0.2f,	0.99f,		0.0f,	0.0f,	-1.0f,//O
+	   0.0f,  0.0f,  1.01f,		0.0f,	1.01f,		0.0f,	0.0f,	-1.0f,//P
+	   -0.2f,  0.0f,  0.99f,		-0.2f,	0.99f,		0.0f,	0.0f,	-1.0f,//Q
+	   -0.39f,  0.0f,  0.93f,		-0.39f,	0.93f,		0.0f,	0.0f,	-1.0f,//R
+	   -0.61f,  0.0f,  0.81f,		-0.61f,	0.81f,		0.0f,	0.0f,	-1.0f,//S
+	   -0.81f,  0.0f,  0.61f,		-0.81f,	0.61f,		0.0f,	0.0f,	-1.0f,//T
+	   -0.92f,  0.0f,  0.41f,		-0.92f,	0.41f,		0.0f,	0.0f,	-1.0f,//U
+	   -0.99f,  0.0f,  0.2f,		-0.99f,	0.2f,		0.0f,	0.0f,	-1.0f,//V
+	   -1.01f,  0.0f,  0.0f,		-1.01f,	0.0f,		0.0f,	0.0f,	-1.0f,//W
+	   -0.99f,  0.0f,  -0.2f,		-0.99f,	-0.2f,		0.0f,	0.0f,	-1.0f,//Z
+	   -0.93f,  0.0f,  -0.39f,		-0.93f,	-0.39f,		0.0f,	0.0f,	-1.0f,//A1
+	   -0.81f,  0.0f,  -0.61f,		-0.81f,	-0.61f,		0.0f,	0.0f,	-1.0f,//B1
+	   -0.61f,  0.0f,  -0.81f,		-0.61f,	-0.81f,		0.0f,	0.0f,	-1.0f,//C1
+	   -0.41f,  0.0f,  -0.92f,		-0.41f,	-0.92f,		0.0f,	0.0f,	-1.0f,//D1
+	   -0.2f,  0.0f,  -0.99f,		-0.2f,	-0.99f,		0.0f,	0.0f,	-1.0f,//E1
+
+
+	};
+	//Alberca
+	Mesh *circulo = new Mesh();
+	circulo->CreateMesh(circulo_vertices, circulo_indices, 232, 84);
+	meshList.push_back(circulo);
+
+}
+
 void CreateShaders()
 {
 	Shader* shader1 = new Shader();
@@ -471,7 +549,9 @@ int main()
 	CreateObjects();
 	CrearCubo(); //meshList[4] Cubo, meshList[5] cuadro
 	CrearCasa(); //meshList[6] Fachada, meshList[7] Base ,meshList[8] techo
+	CrearCirculo(); //meshList[9] Alberca
 	CreateShaders();
+	
 
 	camera = Camera(glm::vec3(-5.0f, 0.0f, 40.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 5.0f, 0.5f);
 
@@ -487,13 +567,14 @@ int main()
 	pisoTexture = Texture("Textures/plain.png");
 	pisoTexture.LoadTextureA();
 
-	asientos = Texture("Models/grandstand/generic medium_01_c.png");
-
 	maderaCasa = Texture("Textures/madera.tga");
 	maderaCasa.LoadTexture();
 	fachadaCasa = Texture("Textures/fachada.jpg");
 	fachadaCasa.LoadTexture();
-
+	agua = Texture("Textures/water2.jpg");
+	agua.LoadTexture();
+	asientos = Texture("Textures/generic medium_01_b.png");
+	asientos.LoadTexture();
 	
 	
 
@@ -511,6 +592,8 @@ int main()
 
 
 	/** M O D E L O S **/
+
+	/* Ambiente */
 	Kitt_M = Model();
 	Kitt_M.LoadModel("Models/kitt.3ds");
 	Llanta_M = Model();
@@ -521,6 +604,8 @@ int main()
 	Camino_M.LoadModel("Models/railroad track.obj");
 	Excusado = Model();
 	Excusado.LoadModel("Models/toilet.obj");
+
+	/*Casa del terror */
 	Cerca = Model();
 	Cerca.LoadModel("Models/Old Fence.obj");
 	Tumba = Model();
@@ -538,8 +623,14 @@ int main()
 	Araña = Model();
 	Araña.LoadModel("Models/spider.obj");
 
-	//JUEGOS MECANICOS
-	//JUEGO DE LAS TAZAS
+	/* Espectaculo acuático */
+	Tobogan = Model();
+	Tobogan.LoadModel("Models/16829_fun_slide_v1_NEW.obj");
+	Gradas = Model();
+	Gradas.LoadModel("Models/grandstand/generic medium.obj");
+
+
+	/** J U E G O  D E  L A S  T A Z A S  **/
 	/* Estructura */
 	Tazas_Estructura = Model();
 	Tazas_Estructura.LoadModel("Models/Tazas-Estructura-obj.obj");
@@ -569,7 +660,7 @@ int main()
 	Sillas_EstructuraGiro = Model();
 	Sillas_EstructuraGiro.LoadModel("Models/Sillas-EstructuraGiratoria-obj.obj");
 
-	/* Ambiente*/
+	//OBJETOS DE RELLENO
 	Lampara = Model();
 	Lampara.LoadModel("Models/lamp.obj");
 	Pruebas = Model();
@@ -588,15 +679,6 @@ int main()
 	Tree.LoadModel("Models/Tree1.3ds");
 	Carrusel = Model();
 	Carrusel.LoadModel("Models/carrusel.obj");
-
-
-	/* Gradas  */
-	Gradas = Model();
-	Gradas.LoadModel("Models/grandstand/generic medium.obj");
-
-	/* Agua*/
-	Agua = Model();
-	Agua.LoadModel("Models/20-ocean/mar.blend");
 
 
 	//luz direccional, sólo 1 y siempre debe de existir
@@ -679,19 +761,24 @@ int main()
 		{
 			if (movCoche < 10.0f)
 			{
-				movCoche += movOffset * deltaTime;
+				movCoche += movOffset*deltaTime;
 				avanza = 1;
 			}
 			else
+			{
 				avanza = 0;
+			}
 		}
 		else
 		{
 			if (movCoche > -10.0f)
+			{
 				movCoche -= movOffset*deltaTime;
-
+			}
 			else
+			{
 				avanza = 1;
+			}
 		}
 
 
@@ -1533,10 +1620,10 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Banca.RenderModel();
 
-		/* Carpa de circo */
+		/* Carpa */
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(-50.0f, -2.0f, -55.0f));
-		model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));
+		model = glm::translate(model, glm::vec3(55.0f, -2.0f, -50.0f));
+		model = glm::scale(model, glm::vec3(0.02f, 0.02f, 0.02f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -1547,7 +1634,7 @@ int main()
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(60.0f, -2.0f, -10.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		model = glm::rotate(model, -90.0f * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Carrusel.RenderModel();
@@ -1586,17 +1673,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tree.RenderModel();
 
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 2.0f));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		asientos.UseTexture();
-		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		Gradas.RenderModel();
-
-
-
-		/** C A S A   D E L  T E R R O R  **/
+		//Casa del terror
 		//Base casa
 		model = glm::mat4(1.0);
 		modelTerror = model = glm::translate(model, glm::vec3(-60.0f, 3.3f, 8.0f));
@@ -1882,7 +1959,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Esqueleto.RenderModel();
 
-		/* Cuervos cuervos */
+		//Cuervos cuervos 
 		model = glm::translate(modelTerror, glm::vec3(0.0f, 4.0f, 7.0f-movPajaro));
 		model = glm::rotate(model, 180+giroPajaro * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
@@ -1917,31 +1994,59 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Araña.RenderModel();
+
+		/* Tobogan */
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-55.0f, -2.0f, -55.0f));
+		//model = glm::rotate(model, 90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Tobogan.RenderModel();
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-70.0f, -2.0f, -60.0f));
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		asientos.UseTexture();
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Gradas.RenderModel();
+
+		/* Alberca */
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-55.0f, -1.99f, -45.0f));
+		//model = glm::rotate(model, 90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(7.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		agua.UseTexture();
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		meshList[9]->RenderMesh();
 		
 
-		//Animación de craneos
+		/* Animación de craneos */
 		if (craneoPos <= 0)
 			craneoControl = 0;
-
 
 		if (craneoPos >= 2.5)
 			craneoControl = 1;
 
-
 		if (craneoControl == 0)
 			craneoPos += 0.005f;
-
 
 		if (craneoControl == 1)
 			craneoPos -= 0.005f;
 
-
-		//Animación cuervos
+		/* Cuervos techo */
 		if (movPajaro >= 10.0) 
 			controlPajaro = 1;
 
 		else if (movPajaro <= 0.0) 
 			controlPajaro = 0;
+
 
 		if (controlPajaro == 1)
 		{
@@ -1955,9 +2060,10 @@ int main()
 			giroPajaro = 0;
 		}
 
-		//Animacion central
+		/* Esqueleto tumba */
 		if (giroEsqueleto >= 90)
 			controlEsqueleto = 0;
+
 
 		if (giroEsqueleto <= 0)
 			controlEsqueleto = 1;
@@ -1965,18 +2071,17 @@ int main()
 		if (controlEsqueleto == 0)
 			giroEsqueleto -= 0.1f;
 
+
 		if (controlEsqueleto == 1)
 			giroEsqueleto += 0.1f;
 
 
-
-		//Giro:
+		/* Movimiento de las sillas */
 		if (mainWindow.mueveSillas())
 		{
 			sillasVarGiroPos += 90.0f * deltaTime;
-			if (sillasVarGiroPos == 360.0f) {
+			if (sillasVarGiroPos == 360.0f) 
 				sillasVarGiroPos = 0.0f;
-			}
 		}
 		/*
 		//Giro:
@@ -1985,17 +2090,6 @@ int main()
 			sillasVarGiroPos = 0.0f;
 		}
 		*/
-
-		/* Animación carrusel */
-		if (mainWindow.mueveCarrusel())
-		{
-			carruajeGiro += 1.0f;
-			carruajeGiro = carruajeGiro * toRadians;
-			if (carruajeGiro = 360.0f)
-			{
-				carruajeGiro = 0.0;
-			}
-		}
 
 		glUseProgram(0);
 
