@@ -1,0 +1,166 @@
+newmtl Default
+Kd 0.745098 0.745098 0.745098
+Ke 0 0 0
+Ka 0.85 0.85 0.85
+Ks 0.5 0.5 0.5
+Ns 150
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+map_Kd LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm4.jpg
+map_Ks LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm5.jpg
+map_bump LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm5.jpg
+bump LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm5.jpg
+
+newmtl GlassFrame
+Kd 0.431373 0.431373 0.431373
+Ke 0 0 0
+Ka 0.455 0.455 0.455
+Ks 0.585 0.585 0.585
+Ns 335
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl Goldrim
+Kd 0.501961 0.501961 0.501961
+Ke 0 0 0
+Ka 1 1 1
+Ks 0.52 0.52 0.52
+Ns 144
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl glassUP
+Kd 0.529412 0.686275 0.705882
+Ke 0 0 0
+Ka 0.16 0.16 0.16
+Ks 0.7 0.7 0.7
+Ns 800
+Tr 0.9
+d 0.1
+Ni 1.002
+Tf 0 0 0
+
+newmtl LightsBedroom
+Kd 0.576471 0.556863 0.901961
+Ke 1 1 1
+Ka 0 0 0
+Ks 1 1 1
+Ns 365
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl Logo49
+Kd 0.784314 0.784314 0.784314
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+map_Kd LWarchives2/OblivionModels/ImagesPremisses/logo49.psd
+map_Ks LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm4.jpg
+map_bump LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm5.jpg
+bump LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm5.jpg
+
+newmtl MainHolder
+Kd 0.513726 0.517647 0.521569
+Ke 0 0 0
+Ka 0.625 0.625 0.625
+Ks 0.5 0.5 0.5
+Ns 159
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+map_Kd LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm4.jpg
+map_Ks LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm5.jpg
+map_bump LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm5.jpg
+bump LWarchives2/Galactica/davidkerin_colonialshuttle/Aluminm5.jpg
+
+newmtl Nurbs_Curve
+Kd 0.784314 0.784314 0.784314
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl newRounderSurface
+Kd 0.290196 0.290196 0.290196
+Ke 0 0 0
+Ka 1 1 1
+Ks 0.325 0.325 0.325
+Ns 254
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl PlarfRim
+Kd 0.784314 0.784314 0.862745
+Ke 0 0 0
+Ka 0.445 0.445 0.445
+Ks 0.945 0.945 0.945
+Ns 740
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl pool
+Kd 0.878431 0.921569 0.905882
+Ke 0 0 0
+Ka 0.1 0.1 0.1
+Ks 0.7 0.7 0.7
+Ns 800
+Tr 0.75
+d 0.25
+Ni 1.225
+Tf 0 0 0
+
+newmtl Sink
+Kd 0.164706 0.164706 0.164706
+Ke 0 0 0
+Ka 1 1 1
+Ks 0.6 0.6 0.6
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl steps
+Kd 0.929412 0.933333 0.858824
+Ke 0 0 0
+Ka 0.5 0.5 0.5
+Ks 0.95 0.95 0.95
+Ns 289
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl Water
+Kd 0.643137 0.72549 0.92549
+Ke 0 0 0
+Ka 1 1 1
+Ks 0.805 0.805 0.805
+Ns 579
+Tr 0.69
+d 0.31
+Ni 1.105
+Tf 1 1 1
+

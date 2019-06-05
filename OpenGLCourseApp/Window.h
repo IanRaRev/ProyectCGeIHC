@@ -18,7 +18,7 @@ public:
 	GLfloat getBufferHeight() { return bufferHeight; }
 	GLfloat mueveSillas() { return keys[GLFW_KEY_2]; }
 	GLfloat mueveTazas() { return keys[GLFW_KEY_3]; }
-	GLfloat mueveCarrusel() { return keys[GLFW_KEY_4]; }
+	GLfloat mueveWheel() { return keys[GLFW_KEY_4]; }
 	bool* getsKeys() { return keys; }
 	bool getShouldClose() { return glfwWindowShouldClose(mainWindow); }
 

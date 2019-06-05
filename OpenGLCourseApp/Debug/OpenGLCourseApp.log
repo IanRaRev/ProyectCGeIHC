@@ -1,5 +1,17 @@
-﻿  proyectoFinal.cpp
+﻿  Window.cpp
 c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(17): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
 c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(18): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\proyectofinal.cpp(756): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(137): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(138): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(142): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(143): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(145): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(146): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+  proyectoFinal.cpp
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(17): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.h(18): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\proyectofinal.cpp(812): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+  Generando código...
+c:\users\ian\documents\octavosemestre\cgeihc\proyecto\cjvg_laha_dfb_irr_proyectocgeihc\openglcourseapp\window.cpp(82): warning C4715: 'Window::Initialise': no todas las rutas de acceso de control devuelven un valor
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   OpenGLCourseApp.vcxproj -> C:\Users\Ian\Documents\OctavoSemestre\CGeIHC\Proyecto\cjvg_laha_dfb_irr_proyectocgeihc\Debug\OpenGLCourseApp.exe

@@ -37,6 +37,13 @@ Skybox: Se agrega Skybox como textura ligada a la cámara.
 #include "Skybox.h"
 #include"SpotLight.h"
 
+
+/* Audio */
+/*#include <stdlib.h>
+#include <AL/alut.h>
+#include "al.h" 
+#include "alc.h" */
+
 const float toRadians = 3.14159265f / 180.0f;
 float movCoche;
 float movOffset;
@@ -58,11 +65,17 @@ Texture fachadaCasa;
 Texture wc;
 Texture agua;
 Texture asientos;
-
+Texture vap;
+Texture GyaBody;
+Texture GyaEye;
+Texture GyaHire;
+Texture Chari;
+Texture Luca;
 
 /* Materiales */
 Material Material_brillante;
 Material Material_opaco;
+Material Material_Esmeralda;
 
 /* Directional Light */
 DirectionalLight mainLight;
@@ -91,6 +104,12 @@ float giroPajaro = 0.0f;
 int controlPajaro = 0;
 float giroEsqueleto = 90.0f;
 int controlEsqueleto = 0;
+
+/* Espectaculo acuatico */
+float movVap = 0.0f;
+
+/* Wheel */
+float movWheel = 0.0f;
 
 /** M O D E L O S **/
 
@@ -124,6 +143,9 @@ Model Banca;
 Model Carpa;
 Model Tree;
 Model Carrusel;
+Model Lucario;
+Model Charizard;
+Model Wheel;
 
 /* Casa del terror */
 Model Cerca;
@@ -138,6 +160,9 @@ Model Araña;
 /* Espectaculo acuático */
 Model Tobogan;
 Model Gradas;
+Model Vaporeon;
+Model Gyarados;
+
 
 /* Skybox */
 Skybox skybox;
@@ -566,6 +591,10 @@ int main()
 	dadoTexture.LoadTextureA();
 	pisoTexture = Texture("Textures/plain.png");
 	pisoTexture.LoadTextureA();
+	Chari = Texture("Textures/charizard.png");
+	Chari.LoadTextureA();
+	Luca = Texture("Textures/LucarioBody.png");
+	Luca.LoadTextureA();
 
 	maderaCasa = Texture("Textures/madera.tga");
 	maderaCasa.LoadTexture();
@@ -573,9 +602,15 @@ int main()
 	fachadaCasa.LoadTexture();
 	agua = Texture("Textures/water2.jpg");
 	agua.LoadTexture();
-	asientos = Texture("Textures/generic medium_01_b.png");
+	asientos = Texture("Textures/generic medium_01_c.png");
 	asientos.LoadTexture();
-	
+	vap = Texture("Textures/vaporeon.png");
+	GyaBody = Texture("Textures/DolGyarados_body.png");
+	GyaBody.LoadTexture();
+	GyaEye = Texture("Textures/DolGyarados_eye.png");
+	GyaEye.LoadTexture();
+	GyaHire= Texture("Textures/DolGyarados_hire.png");
+	GyaHire.LoadTexture();
 	
 
 
@@ -589,6 +624,7 @@ int main()
 	wc.LoadTexture();
 	Material_brillante = Material(4.0f, 256);
 	Material_opaco = Material(0.3f, 4);
+	Material_Esmeralda = Material(0.0215f, 0.1745f);
 
 
 	/** M O D E L O S **/
@@ -628,15 +664,21 @@ int main()
 	Tobogan.LoadModel("Models/16829_fun_slide_v1_NEW.obj");
 	Gradas = Model();
 	Gradas.LoadModel("Models/grandstand/generic medium.obj");
+	Vaporeon = Model();
+	Vaporeon.LoadModel("Models/Vaporeon/vaporeon.obj");
+	Gyarados = Model();
+	Gyarados.LoadModel("Models/Gyarados/Gyarados.obj");
 
 
 	/** J U E G O  D E  L A S  T A Z A S  **/
 	/* Estructura */
 	Tazas_Estructura = Model();
 	Tazas_Estructura.LoadModel("Models/Tazas-Estructura-obj.obj");
+
 	/* Base giratoria */
 	Tazas_BaseGiratoria = Model();
 	Tazas_BaseGiratoria.LoadModel("Models/Tazas-BaseGiratoria-obj.obj");
+
 	/* Tazas */
 	Tazas_TazaRoja = Model();
 	Tazas_TazaRoja.LoadModel("Models/Tazas-TazaRoja-obj.obj");
@@ -653,14 +695,23 @@ int main()
 	Tazas_TazaAzulGris = Model();
 	Tazas_TazaAzulGris.LoadModel("Models/Tazas-TazaAzulGris-obj.obj");
 
-	//JUEGO DE LAS SILLAS
-	//BASE
+	/* Base de las sillas giratorias */
 	Sillas_BaseMetalica = Model();
 	Sillas_BaseMetalica.LoadModel("Models/Sillas-BaseMetalica-obj.obj");
 	Sillas_EstructuraGiro = Model();
 	Sillas_EstructuraGiro.LoadModel("Models/Sillas-EstructuraGiratoria-obj.obj");
 
-	//OBJETOS DE RELLENO
+	/* Ambiente */
+	Kitt_M = Model();
+	Kitt_M.LoadModel("Models/kitt.3ds");
+	Llanta_M = Model();
+	Llanta_M.LoadModel("Models/k_rueda.3ds");
+	Blackhawk_M = Model();
+	Blackhawk_M.LoadModel("Models/uh60.obj");
+	Camino_M = Model();
+	Camino_M.LoadModel("Models/railroad track.obj");
+	Excusado = Model();
+	Excusado.LoadModel("Models/toilet.obj");
 	Lampara = Model();
 	Lampara.LoadModel("Models/lamp.obj");
 	Pruebas = Model();
@@ -679,7 +730,12 @@ int main()
 	Tree.LoadModel("Models/Tree1.3ds");
 	Carrusel = Model();
 	Carrusel.LoadModel("Models/carrusel.obj");
-
+	Lucario = Model();
+	Lucario.LoadModel("Models/Lucario/untitled.obj");
+	Charizard = Model();
+	Charizard.LoadModel("Models/Charizard/charizard.obj");
+	Wheel = Model();
+	Wheel.LoadModel("Models/Lucario/RuedaFortuna.obj");
 
 	//luz direccional, sólo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
@@ -1525,7 +1581,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Excusado.RenderModel();
 
-		//Baños cubo
+		/* Cubo de los baños */
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(29.0f, -1.0f, -28.0f));
 		model = glm::scale(model, glm::vec3(7.0f, 3.0f, 7.0f));
@@ -1534,7 +1590,8 @@ int main()
 		brickTexture.UseTexture();
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		meshList[4]->RenderMesh();
-		//Divisiones
+		
+		/* Divisiones*/
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(25.5f, -1.0f, -29.0f));
 		model = glm::scale(model, glm::vec3(5.0f, 3.0f, 5.0f));
@@ -1620,6 +1677,26 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Banca.RenderModel();
 
+		/* Charizard */
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(5.0f, -2.0f, 20.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Chari.UseTexture();
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Charizard.RenderModel();
+
+		/* Lucario */
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-10.0f, -2.0f, 25.0f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Luca.UseTexture();
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Lucario.RenderModel();
+
 		/* Carpa */
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(55.0f, -2.0f, -50.0f));
@@ -1629,8 +1706,16 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Carpa.RenderModel();
 
+		/* Rueda de la fortuna */
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(40.0f, 10.0f, 20.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		model = glm::rotate(model, movWheel * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_Esmeralda.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Wheel.RenderModel();
 
-		//Carrusel
+		/* Carrusel */
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(60.0f, -2.0f, -10.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
@@ -1640,7 +1725,7 @@ int main()
 		Carrusel.RenderModel();
 
 
-		//Arboles
+		/* Arboles */
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(-30.0f, -2.0f, 15.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
@@ -1673,7 +1758,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tree.RenderModel();
 
-		//Casa del terror
+		/** C A S A  D E L  T E R R O R **/
 		//Base casa
 		model = glm::mat4(1.0);
 		modelTerror = model = glm::translate(model, glm::vec3(-60.0f, 3.3f, 8.0f));
@@ -1883,7 +1968,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Cerca.RenderModel();
 
-		//Tumbas
+		/* Tumbas*/
 		model = glm::translate(modelTerror, glm::vec3(8.0f, -4.3f, 13.0f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -1915,7 +2000,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Tumba.RenderModel();
 
-		//Calabazas
+		/* Calabazas */
 		model = glm::translate(modelTerror, glm::vec3(-14.0f, -5.3f, -5.0f));
 		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
@@ -1930,7 +2015,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Calabaza.RenderModel();
 
-		//Craneos
+		/* Craneos */
 		model = glm::translate(modelTerror, glm::vec3(12.5f, -6.7f + craneoPos, 5.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
@@ -1943,14 +2028,14 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Craneo.RenderModel();
 
-		//Grave central
+		/* Grave Central */
 		model = glm::translate(modelTerror, glm::vec3(0.0f, -5.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Grave.RenderModel();
 
-		//Esqueleto central
+		/* Esqueleto central */
 		model = glm::translate(modelTerror, glm::vec3(0.0f, -5.0f, 0.0f));
 		model = glm::rotate(model, giroEsqueleto * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
@@ -1959,7 +2044,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Esqueleto.RenderModel();
 
-		//Cuervos cuervos 
+		/* Cuervos cuervos */
 		model = glm::translate(modelTerror, glm::vec3(0.0f, 4.0f, 7.0f-movPajaro));
 		model = glm::rotate(model, 180+giroPajaro * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
@@ -1981,7 +2066,7 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Cuervo.RenderModel();
 
-		//Arañas
+		/* Arañas */
 		model = glm::translate(modelTerror, glm::vec3(0.0f, -5.0f, 3.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
@@ -1995,16 +2080,9 @@ int main()
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Araña.RenderModel();
 
-		/* Tobogan */
-		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(-55.0f, -2.0f, -55.0f));
-		//model = glm::rotate(model, 90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
-		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		Tobogan.RenderModel();
+	/* E S P E C T A C U L O  A C U A T I C O */
 
+		/* Gradas */
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(-70.0f, -2.0f, -60.0f));
 		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
@@ -2015,12 +2093,45 @@ int main()
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Gradas.RenderModel();
 
-		/* Alberca */
+		/* Vaporeon */
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(-55.0f, -1.99f, -45.0f));
+		model = glm::translate(model, glm::vec3(-35.0f, -2.0f, -55.0f));
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		vap.UseTexture();
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Vaporeon.RenderModel();
+
+		/* Gyarados*/
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-40.0f, -2.0f, -40.0f));
+		model = glm::rotate(model, 225 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		GyaBody.UseTexture();
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Gyarados.RenderModel();
+
+
+		/* Tobogan */
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-50.0f, -2.0f, -65.0f));
 		//model = glm::rotate(model, 90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
 		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::scale(model, glm::vec3(7.0f, 1.0f, 7.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Tobogan.RenderModel();
+
+		/* Alberca */
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-50.0f, -1.99f, -55.0f));
+		//model = glm::rotate(model, 90 * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(9.0f, 1.0f, 9.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		agua.UseTexture();
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -2090,6 +2201,13 @@ int main()
 			sillasVarGiroPos = 0.0f;
 		}
 		*/
+
+		if (mainWindow.mueveWheel())
+		{
+			movWheel += 90.0f * deltaTime;
+			if (movWheel == 360.0f)
+				movWheel = 0.0f;
+		}
 
 		glUseProgram(0);
 

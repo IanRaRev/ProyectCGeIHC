@@ -98,14 +98,40 @@
     <ClInclude Include="FreeImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="external\OpenAL\include\al.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external\OpenAL\include\alc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external\OpenAL\include\efx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external\OpenAL\include\efx-creative.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external\OpenAL\include\EFX-Util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external\OpenAL\include\xram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external\freealut\include\AL\alut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader_light.frag" />
     <None Include="shader_light.vert" />
     <None Include="skybox.frag" />
     <None Include="skybox.vert" />
+    <None Include="external\freealut\include\Makefile.am" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="FreeImaged.lib" />
+    <Library Include="external\OpenAL\lib\OpenAL32.lib" />
+    <Library Include="external\OpenAL\lib\EFX-Util_MTDLL\EFX-Util.lib" />
+    <Library Include="external\OpenAL\lib\EFX-Util_MT\EFX-Util.lib" />
+    <Library Include="external\freealut\lib\alut.lib" />
   </ItemGroup>
 </Project>
